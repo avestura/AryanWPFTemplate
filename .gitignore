@@ -259,3 +259,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Aryan Software Logo
+ProjectTemplate/Assets/Photos/AryanSoftware_Logo.png
+ProjectTemplate/Assets/Photos/AryanSoftware_Logo.svg
