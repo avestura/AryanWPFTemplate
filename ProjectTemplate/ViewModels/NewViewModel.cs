@@ -9,7 +9,16 @@ namespace ProjectTemplate.ViewModels
 {
     public class NewViewModel : INotifyPropertyChanged
     {
-        public string Name { get; set; }
+        private string _name = string.Empty;
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged("Name");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)
