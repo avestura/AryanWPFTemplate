@@ -1,4 +1,4 @@
-# Aryan-MVVM-Template
+# Aryan MVVM WPF Template
 My MVVM WPF Projects Template for Visual Studio 
 
 ## How to use?
