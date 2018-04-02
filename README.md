@@ -6,6 +6,55 @@ My MVVM WPF Projects Template for Visual Studio
 2. In the menu, go to **Project > Export Template...**
 3. Name your template and done!
 
+## Description
+##### Animation.cs
+This file is used for adding your custom extension animations to the project. There are already
+some animations defined in these file (for example: `HideUsingLinearAnimation()`)
+
+##### App.xaml
+All resources are defined here. If you added any Template or Style as a `ResourceDictionary` file, you shoud address it here.
+
+##### Configuration.cs
+This file is used for saving config of your app to a file. For using this feature, simply define a Property for this class and call
+`SaveSettingsToFile()`. For loading configurations, call `LoadSettingsFromFile()`. Config will be loaded to `App.CurrentApp.Configuration`.
+
+##### Extensions.cs
+Define your general extension methods here.
+
+##### Assets
+This is the base folder for you app's assets. It contains Colors, 
+Fonts, Images, Photos and Strings by default.
+
+##### Assets/Colors
+Define any color in `SolidColors.xaml` and `GradientColors.xaml`, and their brushes in `Brushes/SolidColorBrushes.xaml` and `Brushes/GradientColorBrushes.xaml`. Then, you can use them anywhere in your project.
+
+##### Assets/Fonts
+Simply address your fonts in `Fonts.xaml` and use them anywhere in you project
+
+##### Assets/Images
+Define vector based (Geometric Paths, FontAwesome, ...) icons here. Also you can put png, jpeg, png, ... files here.
+
+##### Assets/Photos
+Put you large photos here.
+
+##### Assets/Strings
+You can define strings here. `ApplicationStrings.xaml` is a pre-defined file for strings that is related to the application (example: Application Name). You can create other `ResourceDictionary` files here (for example: `AlertMessages.xaml`), but don't forget to put the new file address in the `App.xaml`.
+
+##### Models
+Define application models here.
+
+##### ViewModels
+Define application view models here. A template file with implemented `INotifyPropertyChanged` interface is already defined as an example.
+
+##### Views
+This section is for View (User Interface) of your WPF Application.
+##### Views/Controls
+Define your custom controls here.
+##### Views/Pages
+If your app is a multiple mage application, put your pages here.
+##### Views/PartialViews
+You can define Partial Views here. If you have a view that you want to use it in multiple places, simply define it here and use it anywhere you want. Menues are the best examples.
+
 ## Structure
 ```bash
 │   Animation.cs  
@@ -19,7 +68,6 @@ My MVVM WPF Projects Template for Visual Studio
 │  
 ├───Assets  
 │   ├───Colors  
-│   │   │   Colors.xaml  
 │   │   │   GradientColors.xaml  
 │   │   │   SolidColors.xaml  
 │   │   │  
