@@ -8,14 +8,14 @@ My MVVM WPF Projects Template for Visual Studio
 
 ## Description
 ##### Animation.cs
-This file is used for adding your custom extension animations to the project. There are already
-some animations defined in these file (for example: `HideUsingLinearAnimation()`)
+This file is used for adding custom extension animations to the project. There are already
+some animations defined in this file (for example: `HideUsingLinearAnimation()`)
 
 ##### App.xaml
-All resources are defined here. If you added any Template or Style as a `ResourceDictionary` file, you shoud address it here.
+All resources are defined here. If you added any `ResourceDictionary` file, you shoud address it here as a merged dictionary.
 
 ##### Configuration.cs
-This file is used for saving config of your app to a file. For using this feature, simply define a Property for this class and call
+This file is used for saving config of your app to a file. For using this feature, simply define a Property in this class and call
 `SaveSettingsToFile()`. For loading configurations, call `LoadSettingsFromFile()`. Config will be loaded to `App.CurrentApp.Configuration`.
 
 ##### Extensions.cs
@@ -32,7 +32,7 @@ Define any color in `SolidColors.xaml` and `GradientColors.xaml`, and their brus
 Simply address your fonts in `Fonts.xaml` and use them anywhere in you project
 
 ##### Assets/Images
-Define vector based (Geometric Paths, FontAwesome, ...) icons here. Also you can put png, jpeg, png, ... files here.
+Define vector based icons here (Geometric Paths, FontAwesome, ...). You can also put png, jpeg, png, ... files here.
 
 ##### Assets/Photos
 Put you large photos here.
@@ -51,7 +51,7 @@ This section is for View (User Interface) of your WPF Application.
 ##### Views/Controls
 Define your custom controls here.
 ##### Views/Pages
-If your app is a multiple mage application, put your pages here.
+Page section for multiple pages applications.
 ##### Views/PartialViews
 You can define Partial Views here. If you have a view that you want to use it in multiple places, simply define it here and use it anywhere you want. Menues are the best examples.
 
