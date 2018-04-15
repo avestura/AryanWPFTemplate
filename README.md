@@ -7,16 +7,20 @@ My MVVM WPF Projects Template for Visual Studio
 3. Name your template and done!
 
 ## Description
-##### Animation.cs
-This file is used for adding custom extension animations to the project. There are already
+##### Animation
+These files is used for adding custom extension animations to the project. There are already
 some animations defined in this file (for example: `HideUsingLinearAnimation()`)
 
 ##### App.xaml
 All resources are defined here. If you added any `ResourceDictionary` file, you shoud address it here as a merged dictionary.
 
 ##### Configuration.cs
-This file is used for saving config of your app to a file. For using this feature, simply define a Property in this class and call
-`SaveSettingsToFile()`. For loading configurations, call `LoadSettingsFromFile()`. Config will be loaded to `App.CurrentApp.Configuration`.
+This file is used for saving config of your app to a file.  
+For using this feature, simply define a CLR-Property and call
+`SaveSettingsToFile()`.  
+For loading configurations, call `LoadSettingsFromFile()`.  
+Config will be loaded to `App.CurrentApp.Configuration`.  
+`Configuration` is a partial class that has three sub-files containing Fields, HardOperations and Constants separately.
 
 ##### Extensions.cs
 Define your general extension methods here.
@@ -40,6 +44,9 @@ Put you large photos here.
 ##### Assets/Strings
 You can define strings here. `ApplicationStrings.xaml` is a pre-defined file for strings that is related to the application (example: Application Name). You can create other `ResourceDictionary` files here (for example: `AlertMessages.xaml`), but don't forget to put the new file address in the `App.xaml`.
 
+##### Assets/Behaviors
+You can define Behaviors from `System.Windows.Interactivity` here.
+
 ##### Models
 Define application models here.
 
@@ -57,12 +64,9 @@ You can define Partial Views here. If you have a view that you want to use it in
 
 ## Structure
 ```bash
-│   Animation.cs  
 │   App.config  
 │   App.xaml  
-│   App.xaml.cs  
-│   Configuration.cs  
-│   Extensions.cs  
+│   App.xaml.cs    
 │   MainWindow.xaml  
 │   MainWindow.xaml.cs  
 │  
@@ -90,6 +94,12 @@ You can define Partial Views here. If you have a view that you want to use it in
 ├───Models  
 │       NewModel.cs  
 │  
+├───Engines  
+│       CalculationEngine.cs  
+│  
+├───Extensions  
+│       Extensions.cs  
+│  
 ├───Views  
 │   ├───Controls  
 │   │   └───WaveCircle  
@@ -107,8 +117,11 @@ You can define Partial Views here. If you have a view that you want to use it in
 │   ├───Styles  
 │   │       GeneralStyles.xaml  
 │   │  
-│   └───Templates  
-│           GeneralTemplates.xaml  
+│   ├───Templates  
+│   │       GeneralTemplates.xaml  
+│   │  
+│   └───Behaviors  
+│           BlinkBehavior.xaml  
 │  
 └───ViewModels  
         NewViewModel.cs  
