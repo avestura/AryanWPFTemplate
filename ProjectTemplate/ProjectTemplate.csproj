@@ -74,7 +74,8 @@
     <Compile Include="Configurations\ConfigurationProperties.cs">
       <DependentUpon>Configuration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Engines\CalculationEngine.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Models\NewModel.cs" />
     <Compile Include="ViewModels\NewViewModel.cs" />
     <Compile Include="Views\Animations\BlinkAnimations.cs" />
