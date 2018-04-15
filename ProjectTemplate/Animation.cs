@@ -11,6 +11,8 @@ namespace ProjectTemplate
     public static class Animation
     {
 
+        #region Animation :: Margin Fade
+
         public static void MarginFadeInAnimation(this FrameworkElement element, Thickness from, Thickness to, TimeSpan? duration = null, bool useFade = true, bool makeVisible = true)
         {
             if (duration == null) duration = new TimeSpan(0, 0, 1);
@@ -53,7 +55,35 @@ namespace ProjectTemplate
             element.BeginStoryboard(storyboard);
 
         }
+        public static async Task MarginFadeInAnimationAsync(this FrameworkElement element, Thickness from, Thickness to, TimeSpan? duration = null, bool useFade = true, bool makeVisible = true)
+        {
+            if (duration == null) duration = new TimeSpan(0, 0, 1);
+            await Task.Run(async () =>
+            {
+                if (element == null) return;
+                element.Dispatcher.Invoke(() =>
+                {
+                    element.MarginFadeInAnimation(from, to, duration, useFade, makeVisible);
+                });
+                await Task.Delay(duration.Value);
+            });
 
+        }
+
+        public static async Task MarginFadeOutAnimationAsync(this FrameworkElement element, Thickness from, Thickness to, TimeSpan? duration = null, bool useFade = true, bool makeVisible = true)
+        {
+            if (duration == null) duration = new TimeSpan(0, 0, 1);
+            await Task.Run(async () =>
+            {
+                if (element == null) return;
+                element.Dispatcher.Invoke(() =>
+                {
+                    element.MarginFadeOutAnimation(from, to, duration, useFade, makeVisible);
+                });
+                await Task.Delay(duration.Value);
+            });
+
+        }
         public static void MarginFadeOutAnimation(this FrameworkElement element, Thickness from, Thickness to, TimeSpan? duration = null, bool useFade = true, bool collapse = true)
         {
             if (duration == null) duration = new TimeSpan(0, 0, 1);
@@ -95,16 +125,19 @@ namespace ProjectTemplate
 
         }
 
+        #endregion Animation :: Margin Fade
+
         #region Animation :: Show And Fade
-        public static void HideUsingLinearAnimation(this UIElement element, int milliSeconds = 500)
+        public static void HideUsingLinearAnimation(this UIElement element, int milliSeconds = 500, IEasingFunction easingFunction = null)
         {
             if (element == null) return;
             var anim = new DoubleAnimation()
             {
                 From = 1,
                 To = 0,
-                Duration = new TimeSpan(0, 0, 0, 0, milliSeconds)
+                Duration = new TimeSpan(0, 0, 0, 0, milliSeconds),
             };
+            if (easingFunction != null) anim.EasingFunction = easingFunction;
 
             anim.Completed += new EventHandler((sender, e) =>
             {
@@ -115,8 +148,20 @@ namespace ProjectTemplate
             element.BeginAnimation(UIElement.OpacityProperty, anim);
 
         }
+        public static Task HideUsingLinearAnimationAsync(this UIElement element, int milliSeconds = 500, IEasingFunction easingFunction = null)
+        {
+            return Task.Run(async () =>
+            {
+                if (element == null) return;
+                element.Dispatcher.Invoke(() =>
+                {
+                    HideUsingLinearAnimation(element, milliSeconds, easingFunction);
+                });
+                await Task.Delay(milliSeconds);
+            });
+        }
 
-        public static void ShowUsingLinearAnimation(this UIElement element, int milliSeconds = 500)
+        public static void ShowUsingLinearAnimation(this UIElement element, int milliSeconds = 500, IEasingFunction easingFunction = null)
         {
             if (element == null) return;
             var anim = new DoubleAnimation()
@@ -125,34 +170,21 @@ namespace ProjectTemplate
                 To = 1,
                 Duration = new TimeSpan(0, 0, 0, 0, milliSeconds)
             };
+            if (easingFunction != null) anim.EasingFunction = easingFunction;
 
             element.Opacity = 0;
             element.Visibility = Visibility.Visible;
             element.BeginAnimation(UIElement.OpacityProperty, anim);
 
         }
-
-        public static Task HideUsingLinearAnimationAsync(this UIElement element, int milliSeconds = 500)
+        public static Task ShowUsingLinearAnimationAsync(this UIElement element, int milliSeconds = 500, IEasingFunction easingFunction = null)
         {
             return Task.Run(async () =>
             {
                 if (element == null) return;
                 element.Dispatcher.Invoke(() =>
                 {
-                    HideUsingLinearAnimation(element, milliSeconds);
-                });
-                await Task.Delay(milliSeconds);
-            });
-        }
-
-        public static Task ShowUsingLinearAnimationAsync(this UIElement element, int milliSeconds = 500)
-        {
-            return Task.Run(async () =>
-            {
-                if (element == null) return;
-                element.Dispatcher.Invoke(() =>
-                {
-                    ShowUsingLinearAnimation(element, milliSeconds);
+                    ShowUsingLinearAnimation(element, milliSeconds, easingFunction);
                 });
                 await Task.Delay(milliSeconds);
             });
