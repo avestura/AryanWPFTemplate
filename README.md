@@ -15,7 +15,7 @@ some animations defined in this file (for example: `HideUsingLinearAnimation()`)
 All resources are defined here. If you added any `ResourceDictionary` file, you shoud address it here as a merged dictionary.
 
 ##### Configuration.cs
-This file is used for saving config of your app to a file.  
+This is used for saving config of your app to a file.  
 For using this feature, simply define a CLR-Property and call
 `SaveSettingsToFile()`.  
 For loading configurations, call `LoadSettingsFromFile()`.  
