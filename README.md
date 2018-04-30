@@ -8,7 +8,7 @@ My MVVM WPF Projects Template for Visual Studio
 
 ## Description
 ##### Animation
-These files is used for adding custom extension animations to the project. There are already
+These files are used for adding custom extension animations to the project. There are already
 some animations defined in this file (for example: `HideUsingLinearAnimation()`)
 
 ##### App.xaml
