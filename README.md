@@ -8,14 +8,14 @@ My MVVM WPF Projects Template for Visual Studio
 
 ## Description
 ##### Animation
-These files is used for adding custom extension animations to the project. There are already
+These files are used for adding custom extension animations to the project. There are already
 some animations defined in this file (for example: `HideUsingLinearAnimation()`)
 
 ##### App.xaml
 All resources are defined here. If you added any `ResourceDictionary` file, you shoud address it here as a merged dictionary.
 
 ##### Configuration.cs
-This file is used for saving config of your app to a file.  
+This is used for saving config of your app to a file.  
 For using this feature, simply define a CLR-Property and call
 `SaveSettingsToFile()`.  
 For loading configurations, call `LoadSettingsFromFile()`.  
