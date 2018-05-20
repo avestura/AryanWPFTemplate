@@ -76,8 +76,8 @@
     </Compile>
     <Compile Include="Engines\CalculationEngine.cs" />
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Models\NewModel.cs" />
-    <Compile Include="ViewModels\NewViewModel.cs" />
+    <Compile Include="Models\SampleModel.cs" />
+    <Compile Include="ViewModels\SampleViewModel.cs" />
     <Compile Include="Views\Animations\BlinkAnimations.cs" />
     <Compile Include="Views\Animations\MarginFadeAnimations.cs" />
     <Compile Include="Views\Animations\ShowAndFadeAnimations.cs" />
@@ -167,12 +167,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataAccessLayer\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Photos\AryanSoftware_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Photos\AryanSoftware_Logo.svg" />
+    <Resource Include="Assets\WinRT\App Logo 150x150.png" />
+    <Resource Include="Assets\WinRT\App Logo 70x70.png" />
+    <Resource Include="ProjectTemplate.visualelementsmanifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Photos\Pattern_CreamPixels.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
