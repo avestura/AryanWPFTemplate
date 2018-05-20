@@ -12,7 +12,7 @@ namespace ProjectTemplate.Configurations
 
         [XmlIgnore]
         public string IgnoredProperty { get; set; }
-        
+
         public string StoredProperty { get; set; }
 
     }

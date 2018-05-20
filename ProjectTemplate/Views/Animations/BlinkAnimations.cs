@@ -12,7 +12,7 @@ namespace ProjectTemplate.Views.Animations
     {
 
         public static void BlinkLinear(
-            this UIElement element, 
+            this UIElement element,
             TimeSpan duration,
             double opacityStart = 0,
             double opacityEnd = 1)
@@ -27,7 +27,7 @@ namespace ProjectTemplate.Views.Animations
 
         public static void BlinkLinear(
             this UIElement element,
-            int milliSecondDuration = 1000, 
+            int milliSecondDuration = 1000,
             double opacityStart = 0,
             double opacityEnd = 1)
         {
@@ -36,7 +36,7 @@ namespace ProjectTemplate.Views.Animations
 
         public static void BlinkEasing(
             this UIElement element,
-            TimeSpan duration, 
+            TimeSpan duration,
             double opacityStart = 0,
             double opacityEnd = 1)
         {

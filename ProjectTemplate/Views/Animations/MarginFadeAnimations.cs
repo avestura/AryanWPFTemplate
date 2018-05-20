@@ -84,8 +84,8 @@ namespace ProjectTemplate.Views.Animations
         public static async Task MarginFadeOutAnimationAsync(
             this FrameworkElement element,
             Thickness from,
-            Thickness to, 
-            TimeSpan? duration = null, 
+            Thickness to,
+            TimeSpan? duration = null,
             bool useFade = true,
             bool makeVisible = true)
         {

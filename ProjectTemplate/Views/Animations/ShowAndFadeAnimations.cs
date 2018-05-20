@@ -11,8 +11,8 @@ namespace ProjectTemplate.Views.Animations
     public static class ShowAndFadeAnimations
     {
         public static void HideUsingLinearAnimation(
-            this UIElement element, 
-            int milliSeconds = 500, 
+            this UIElement element,
+            int milliSeconds = 500,
             IEasingFunction easingFunction = null)
         {
             if (element == null) return;
