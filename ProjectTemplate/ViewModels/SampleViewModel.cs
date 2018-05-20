@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectTemplate.ViewModels
 {
-    public class NewViewModel : INotifyPropertyChanged
+    public class SampleViewModel : INotifyPropertyChanged
     {
         private string _name = string.Empty;
         public string Name

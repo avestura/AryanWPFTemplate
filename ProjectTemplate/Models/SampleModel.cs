@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectTemplate.Models
 {
-    public class NewModel
+    public class SampleModel
     {
         public string Name { get; set; }
     }
