@@ -38,6 +38,9 @@ Simply address your fonts in `Fonts.xaml` and use them anywhere in you project
 ##### Assets/Images
 Define vector based icons here (Geometric Paths, FontAwesome, ...). You can also put png, jpeg, png, ... files here.
 
+##### Assets/WinRT
+Resources related to Windows Runtime. For example you can define assets for Windows 10 start menu tile image of you app. There are already two 150x150 and 70x70 images in this folder. App's Visual manifest located in root of the project loads this images when pinning your app in start menu.
+
 ##### Assets/Photos
 Put you large photos here.
 
@@ -69,6 +72,7 @@ You can define Partial Views here. If you have a view that you want to use it in
 │   App.xaml.cs    
 │   MainWindow.xaml  
 │   MainWindow.xaml.cs  
+│   [ProjectName].visualelementsmanifest.xml
 │  
 ├───Assets  
 │   ├───Colors  
@@ -88,11 +92,15 @@ You can define Partial Views here. If you have a view that you want to use it in
 │   ├───Photos  
 │   │       Pattern_CreamPixles.png  
 │   │  
-│   └───Strings  
-│           ApplicationStrings.xaml  
+│   ├───Strings
+│   │       ApplicationStrings.xaml  
+│   │  
+│   └───WinRT  
+│           App Logo 70x70.png
+│           App Logo 150x150.png
 │  
 ├───Models  
-│       NewModel.cs  
+│       SampleModel.cs  
 │  
 ├───Engines  
 │       CalculationEngine.cs  
@@ -124,5 +132,5 @@ You can define Partial Views here. If you have a view that you want to use it in
 │           BlinkBehavior.xaml  
 │  
 └───ViewModels  
-        NewViewModel.cs  
+        SampleViewModel.cs  
 ```
